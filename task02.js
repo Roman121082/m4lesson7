@@ -1,15 +1,12 @@
 'use strict';
 
+const randomNumberArray2 = (elements, minNumber, maxNumber) => {
+  const randomArray = [];
 
-const randomNumber = (elements, minNumber, maxNumber) => {
-  let newRandomNumber = [];
+  for (let i = 1; i <= elements; i++)
+    randomArray.push(Math.round(Math.random() * (maxNumber - minNumber) + minNumber));
 
-  for (minNumber = 31; minNumber <= maxNumber; ++minNumber) {
-
-    newRandomNumber.push(Math.round(Math.random() * elements));
-
-    return newRandomNumber;
-  }
+  return randomArray;
 }
 
-console.log(`случайное число: "${randomNumberArray(41, 31, 70)}"`);
+console.log(`случайные числа в диапазоне: "${randomNumberArray2(10, 70, 30)}"`);

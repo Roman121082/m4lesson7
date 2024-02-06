@@ -1,14 +1,12 @@
 'use strict';
 
 const randomNumberArray = (elements) => {
-  let randomElement = [];
+  const randomArray = [];
 
-  for (let i = 2; i <= elements; ++i) {
+  for (let i = 1; i <= elements; i++)
+    randomArray.push(Math.round(Math.random() * 100));
 
-    randomElement.push(Math.round(Math.random() * elements));
-
-    return randomElement;
-  }
+  return randomArray;
 }
 
-console.log(`случайное число от 1 до 100: "${randomNumberArray(100)}"`);
+console.log(`случайные числа от 1 до 100: "${randomNumberArray(10)}"`);
