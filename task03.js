@@ -1,29 +1,31 @@
 'use strict';
 
 let randomNumberArray3 = (elements, minNumber, maxNumber, stringEvenOrOdd) => {
-  const randomArray = [];
+  let randomArray = [];
+  let randomArrayEven = [];
+  let randomArrayOdd = [];
 
-  if (stringEvenOrOdd = 'even') {
-    for (let i = 1; i <= elements; i++) {
-      let randomElement = (Math.round(Math.random() * (maxNumber - minNumber) + minNumber));
-      if (randomElement % 2 == 0) {
-        randomArray.push(randomElement);
-      };
-    };
-  }
+  for (let i = 0; i <= elements; i++) {
+    let randomElement = (Math.round(Math.random() * (maxNumber - minNumber) + minNumber));
 
-  if (stringEvenOrOdd = 'odd') {
-    for (let i = 1; i <= elements; i++) {
-      let randomElement = (Math.round(Math.random() * (maxNumber - minNumber) + minNumber));
-      if (randomElement % 2 !== 0) {
-        randomArray.push(randomElement);
-      };
-    };
-  }
+    if (randomElement % 2 == 0) {
+      randomArrayEven.push(randomElement);
+    }
+    else if (randomElement % 2 !== 0) {
+      randomArrayOdd.push(randomElement);
+    }
 
-  console.log(stringEvenOrOdd);
+    if (stringEvenOrOdd == 'even') {
+      randomArray = randomArrayEven;
+    }
+    else if (stringEvenOrOdd == 'odd') {
+      randomArray = randomArrayOdd
+    }
+
+  };
+
   return randomArray;
 };
 
-console.log(`четный/нечетный массив в диапазоне: "${randomNumberArray3(5, 30, 70, 'odd')}"`);
+console.log(`четный/нечетный массив в диапазоне: `, randomNumberArray3(10, 30, 70, 'odd'));
 

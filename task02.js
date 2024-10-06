@@ -9,4 +9,4 @@ const randomNumberArray2 = (elements, minNumber, maxNumber) => {
   return randomArray;
 }
 
-console.log(`случайные числа в диапазоне: "${randomNumberArray2(10, 70, 30)}"`);
+console.log(`случайные числа в диапазоне: "${randomNumberArray2(10, -70, 70)}"`);
